@@ -11,10 +11,10 @@ public class UserRegistration {
 
     public static void main(String[] args) {
         UserRegistration userRegistration = new UserRegistration();
-        userRegistration.validFirstName();
-        userRegistration.validSecondName();
-        userRegistration.validEmailId();
-        userRegistration.ValidPhoneNumber();
+//        userRegistration.validFirstName();
+//        userRegistration.validSecondName();
+//        userRegistration.validEmailId();
+//        userRegistration.ValidPhoneNumber();
         userRegistration.validPassword();
     }
     public void validFirstName(){
@@ -72,7 +72,7 @@ public class UserRegistration {
     }
 
     public void validPassword(){
-        Pattern pattern = Pattern.compile("^[a-z]{8,}$");
+        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z]).{8,}$");
         System.out.println("Enter user Password");
 
         String password = scanner.nextLine();
