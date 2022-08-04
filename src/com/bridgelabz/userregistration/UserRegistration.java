@@ -11,10 +11,10 @@ public class UserRegistration {
 
     public static void main(String[] args) {
         UserRegistration userRegistration = new UserRegistration();
-//        userRegistration.validFirstName();
-//        userRegistration.validSecondName();
-//        userRegistration.validEmailId();
-//        userRegistration.ValidPhoneNumber();
+        userRegistration.validFirstName();
+        userRegistration.validSecondName();
+        userRegistration.validEmailId();
+        userRegistration.ValidPhoneNumber();
         userRegistration.validPassword();
     }
     public void validFirstName(){
@@ -45,7 +45,7 @@ public class UserRegistration {
     }
 
     public void validEmailId(){
-        Pattern pattern = Pattern.compile("^[a-z]*.[a-z]+@[a-z]+.[a-z]{2,3}(.[a-z]{2})*$");
+        Pattern pattern = Pattern.compile("^[a-z]*.[a-z0-9]+@[a-z0-9]+.[a-z]{2,3}(.[a-z]{2,3})*$");
         System.out.println("Enter user email ");
         scanner.nextLine();
         String email = scanner.nextLine();
@@ -58,7 +58,7 @@ public class UserRegistration {
     }
 
     public void ValidPhoneNumber(){
-        Pattern pattern = Pattern.compile("^[9][1]\s[6-9][0-9]{9}$");
+        Pattern pattern = Pattern.compile("^91\s[6-9][0-9]{9}$");
         System.out.println("Enter user Phone number");
 
         String phoneNumber = scanner.nextLine();
@@ -72,7 +72,7 @@ public class UserRegistration {
     }
 
     public void validPassword(){
-        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&+=]).{8,}$");
+        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&+=])?.{8,}$");
         System.out.println("Enter user Password");
 
         String password = scanner.nextLine();
