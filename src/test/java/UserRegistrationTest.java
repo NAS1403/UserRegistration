@@ -45,6 +45,7 @@ public class UserRegistrationTest {
         String expectedRes = "InValid";
         Assertions.assertSame(actualResult, expectedRes);
     }
+
     @Test
     public void givenTextWhenItContainsFirstCapsInSnameShouldReturnTrue() {
         String actual = user.validFirstName("Abhishek");
