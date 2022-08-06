@@ -14,7 +14,7 @@ public class UserRegistrationTest {
     public void givenTextWhenItContainsFirstCapsInFnameAndMinThreeAlphabetsShouldReturnTrue() {
 
         try {
-            String actual = user.validFirstName("Abhishek");
+            String actual = user.validFirstName.validate("Abhishek");
             String expected = "Valid";
             Assertions.assertSame(actual, expected);
         }
@@ -26,7 +26,7 @@ public class UserRegistrationTest {
     @Test
     public void givenTextWhenItDoesNotContainsFirstCapsInFnameShouldReturnTrue(){
         try {
-            String actual = user.validFirstName("abhishek");
+            String actual = user.validFirstName.validate("abhishek");
             String expected = "Valid";
             Assertions.assertSame(actual, expected);
         }
@@ -38,7 +38,7 @@ public class UserRegistrationTest {
     @Test
     public void givenTextWhenItContainsFirstCapsInFnameButNotMinThreeCharShouldReturnTrue(){
         try {
-            String actual = user.validFirstName("Ab");
+            String actual = user.validFirstName.validate("Ab");
             String expected = "Valid";
             Assertions.assertSame(actual, expected);
         }
@@ -50,7 +50,7 @@ public class UserRegistrationTest {
     public void givenTextWhenItContainsFirstCapsInSnameAndMinThreeAlphabetsShouldReturnTrue() {
 
         try {
-            String actual = user.validSecondName("Sagar");
+            String actual = user.validSecondName.validate("Sagar");
             String expected = "Valid";
             Assertions.assertSame(actual, expected);
         }
@@ -62,7 +62,7 @@ public class UserRegistrationTest {
     @Test
     public void givenTextWhenItDoesNotContainsFirstCapsInSnameShouldReturnFalse(){
         try {
-            String actual = user.validSecondName("sagar");
+            String actual = user.validSecondName.validate("sagar");
             String expected = "Valid";
             Assertions.assertSame(actual, expected);
         }
@@ -74,7 +74,7 @@ public class UserRegistrationTest {
     @Test
     public void givenTextWhenItContainsFirstCapsInSnameButNotMinThreeCharShouldReturnFalse(){
         try {
-            String actual = user.validSecondName("Sa");
+            String actual = user.validSecondName.validate("Sa");
             String expected = "Valid";
             Assertions.assertSame(actual, expected);
         }
@@ -87,7 +87,7 @@ public class UserRegistrationTest {
     @Test
     public void givenEmailWhenDoesNotContainsAtTheRateShouldReturnFalse() {
         try {
-            String actualResult = user.validEmailId("kuabc.yahoo.com");
+            String actualResult = user.validEmailId.validate("kuabc.yahoo.com");
             String expectedRes = "Valid";
             Assertions.assertEquals(actualResult, expectedRes);
         }
@@ -100,7 +100,7 @@ public class UserRegistrationTest {
     @Test
     public void givenEmailWhenAccordingToProperReqShouldReturnTrue() {
         try{
-            String actualResult = user.validEmailId("abc.xyz@bl.co.in");
+            String actualResult = user.validEmailId.validate("abc.xyz@bl.co.in");
             String expectedRes = "Valid";
             Assertions.assertEquals(actualResult, expectedRes);
         }
@@ -112,7 +112,7 @@ public class UserRegistrationTest {
     @Test
     public void givenMobileNumberWithSpaceAndProperNumberShouldReturnTrue() {
         try{
-            String actualResult = user.validPhoneNumber("91 9066939699");
+            String actualResult = user.validPhoneNumber.validate("91 9066939699");
             String expectedRes = "Valid";
             Assertions.assertSame(actualResult, expectedRes);
         }
@@ -125,7 +125,7 @@ public class UserRegistrationTest {
     @Test
     public void givenMobileNumberWithoutSpaceAndProperNumberShouldReturnFalse() {
         try{
-            String actualResult = user.validPhoneNumber("919066939699");
+            String actualResult = user.validPhoneNumber.validate("919066939699");
             String expectedRes = "Valid";
             Assertions.assertSame(actualResult, expectedRes);
         }
@@ -137,7 +137,7 @@ public class UserRegistrationTest {
     @Test
     public void givenMobileNumberWithSpaceButNotProperCountryCodeShouldReturnFalse() {
         try{
-            String actualResult = user.validPhoneNumber("819066939699");
+            String actualResult = user.validPhoneNumber.validate("819066939699");
             String expectedRes = "Valid";
             Assertions.assertSame(actualResult, expectedRes);
         }
@@ -149,7 +149,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordWithoutAnUpperCaseShouldReturnFalse() {
         try {
-            String actualResult = user.validPassword("abccc@123");
+            String actualResult = user.validPassword.validate("abccc@123");
             String expectedRes = "Valid";
             Assertions.assertSame(actualResult, expectedRes);
         }
@@ -162,7 +162,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordWithoutASpecialCharShouldReturnFalse() {
         try {
-            String actualResult = user.validPassword("abccc123");
+            String actualResult = user.validPassword.validate("abccc123");
             String expectedRes = "Valid";
             Assertions.assertSame(actualResult, expectedRes);
         }
@@ -174,7 +174,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordWithoutALowerCaseShouldReturnFalse() {
         try {
-            String actualResult = user.validPassword("AAA@123");
+            String actualResult = user.validPassword.validate("AAA@123");
             String expectedRes = "Valid";
             Assertions.assertSame(actualResult, expectedRes);
         }
@@ -186,7 +186,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordWithoutMinNumOfCharShouldReturnFalse() {
         try {
-            String actualResult = user.validPassword("Ac@123");
+            String actualResult = user.validPassword.validate("Ac@123");
             String expectedRes = "Valid";
             Assertions.assertSame(actualResult, expectedRes);
         }
@@ -198,7 +198,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordWithProperRequirementsShouldReturnTrue() {
         try {
-            String actualResult = user.validPassword("Abcd@123");
+            String actualResult = user.validPassword.validate("Abcd@123");
             String expectedRes = "Valid";
             Assertions.assertSame(actualResult, expectedRes);
         }
