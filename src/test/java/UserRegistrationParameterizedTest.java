@@ -35,7 +35,7 @@ public class UserRegistrationParameterizedTest {
 
     @Test
     public void testEmail() throws UserRegistrationException {
-        assertEquals(expectedResult, read.validEmailId(email));
+        assertEquals(expectedResult, read.validEmailId.validate(email));
     }
 
 }
